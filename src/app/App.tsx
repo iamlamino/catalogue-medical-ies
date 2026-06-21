@@ -160,8 +160,9 @@ const CAT: Record<Category, { label: string; Icon: any; color: string; light: st
 function IESLogo({ size = 36 }: { size?: number }) {
   const [ok, setOk] = useState(true);
   return ok ? (
-    <img src="/images/logo.jpg" alt="IES" width={size} height={size}
-      className="rounded-lg object-contain" onError={() => setOk(false)} />
+    <img src="/images/logo.jpg" alt="IES"
+      style={{ height: size, width: "auto", maxWidth: size * 3 }}
+      className="rounded-lg" onError={() => setOk(false)} />
   ) : (
     <div className="rounded-xl flex items-center justify-center font-black text-white"
       style={{ width: size, height: size, background: "linear-gradient(135deg,#173A73,#0F2850)", fontSize: size * 0.3 }}>
